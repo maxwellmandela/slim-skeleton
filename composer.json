@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/csrf": "^0.8.1"
+    }
+}
