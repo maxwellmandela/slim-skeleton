@@ -16,4 +16,8 @@ $app->get('/hello/{name}', function ($request, $response, $args) {
     return $response->write("Hello, " . $args['name']);
 });
 
+$app->post('/post', function($request, $responce, $args){
+    return $responce->write("Posted");
+});
+
 $app->run();
