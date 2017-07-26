@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 $app = new Slim\App();
 
 $app->get('/', function ($request, $response, $args) {
-    return $response->write("Hello world");
+    return $response->write("Hello world, welcome to slim by Max ;)");
 });
 
 $app->get('/user/home', function ($request, $response, $args) {
