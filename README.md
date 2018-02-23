@@ -11,6 +11,7 @@ That's just about it, go host and enjoy!
 Database package not added but you can check out Elloquent and install it via composer
 
 #TL;DR
+
 ##Updates
 Bootstrap Version: 4.0.0
 Slim: 3.0.0
