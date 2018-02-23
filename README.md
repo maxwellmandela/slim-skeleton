@@ -10,8 +10,8 @@ That's just about it, go host and enjoy!
 # Issues
 Database package not added but you can check out Elloquent and install it via composer
 
-#TL;DR
+# TL;DR
 
-##Updates
+## Updates
 Bootstrap Version: 4.0.0
 Slim: 3.0.0
