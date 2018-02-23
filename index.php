@@ -19,22 +19,25 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 $app->get('/employees', function (Request $request, Response $response, array $args) {
     $records = Record::all();
-    echo $records->toJson();
+    return $records->toJson();
 
 	//$response = $this->view->render($response, 'index.phtml', ['name' => $name]);
     //return $response;
 });
 
 $app->get('/employees/{id}', function (Request $request, Response $response, array $args) {
-    $name = $args['name'];
-	$record = Record::find($args['id']);
-    echo $record->toJson();
+    $record = Record::find($args['id']);
+	if($record){
+	    return $record->toJson();
+	}
+
+	return "No Record found";
 
 	//$response = $this->view->render($response, 'index.phtml', ['name' => $name]);
     //return $response;
 });
 
-$app->get('/register', function (Request $request, Response $response, array $args) {
+$app->post('/register', function (Request $request, Response $response, array $args) {
     $record = new Record;
 	$record->name = $args['name'];
 	$record->email = 'john@email.com';
