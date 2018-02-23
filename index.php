@@ -1,7 +1,6 @@
 <?php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-use App\WidgetController;
 use App\Models\Record;
 use Illuminate\Events\Dispatcher;
 
