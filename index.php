@@ -1,23 +1,52 @@
 <?php
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
+use App\WidgetController;
+use App\Models\Record;
+use Illuminate\Events\Dispatcher;
 
+// vendor packages
 require 'vendor/autoload.php';
 
-$app = new Slim\App();
+// config
+require "config.php";
 
-$app->get('/', function ($request, $response, $args) {
-    return $response->write("Hello world, welcome to slim by Max ;)");
+// routes
+$app->get('/', function (Request $request, Response $response, array $args) {
+    $records = Record::all();
+	$response = $this->view->render($response, 'index.phtml', ['employees' => $records]);
+    return $response;
 });
 
-$app->get('/user/home', function ($request, $response, $args) {
-    return $response->write("Hello world, this is our site, welcome home to your profile");
+$app->get('/employees', function (Request $request, Response $response, array $args) {
+    $records = Record::all();
+    echo $records->toJson();
+
+	//$response = $this->view->render($response, 'index.phtml', ['name' => $name]);
+    //return $response;
 });
 
-$app->get('/hello/{name}', function ($request, $response, $args) {
-    return $response->write("Hello, " . $args['name']);
+$app->get('/employees/{id}', function (Request $request, Response $response, array $args) {
+    $name = $args['name'];
+	$record = Record::find($args['id']);
+    echo $record->toJson();
+
+	//$response = $this->view->render($response, 'index.phtml', ['name' => $name]);
+    //return $response;
 });
 
-$app->post('/post', function($request, $responce, $args){
-    return $responce->write("Posted");
+$app->get('/register', function (Request $request, Response $response, array $args) {
+    $record = new Record;
+	$record->name = $args['name'];
+	$record->email = 'john@email.com';
+	$record->reporting_date = '2018-02-12';
+	$record->age = 23;
+	$record->department = 'IT';
+	//$record->save();
+    //echo $record->toJson();
+
+	//$response = $this->view->render($response, 'index.phtml', ['name' => $name]);
+    //return $response;
 });
 
 $app->run();

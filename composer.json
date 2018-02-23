@@ -1,6 +1,13 @@
 {
     "require": {
         "slim/slim": "^3.0",
-        "slim/csrf": "^0.8.1"
-    }
+        "slim/csrf": "^0.8.1",
+        "slim/php-view": "^2.2",
+        "illuminate/database": "~5.1"
+    },
+	"autoload": {
+		"classmap": [
+	      "app/models"
+	    ]
+	}
 }

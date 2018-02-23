@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Awesome APIs</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+				<h2>Welcome to Awesome APIs</h2>
+			</div>
+
+			<h3>Employees</h3>
+			<table class="table">
+				<thead>
+					<th>Name</th>
+					<th>Department</th>
+					<th>Email</th>
+				</thead>
+				<tbody>
+					<?php foreach ($employees as $key => $value): ?>
+						<td><?= $value->name ?></td>
+						<td><?= $value->department ?></td>
+						<td><?= $value->email ?></td>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
