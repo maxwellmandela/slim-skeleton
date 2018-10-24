@@ -6,10 +6,10 @@ $config['addContentLengthHeader'] = false;
 
 $config['db'] = [
     'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'awesome_api',
-    'username' => 'root',
-    'password' => 'root',
+    'host' => '',
+    'database' => '',
+    'username' => '',
+    'password' => '',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
